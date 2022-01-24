@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Gestion de Projet</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="words.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="civilisation.html">Civilisation</a></li>
+    </ul> 
+
+    <br>
+    <div class="diff">
+      <input type="button" class="btnDiff" value= "Liste mots" onclick="listWords()">
+      <input type="button" class="btnDiff" value= "Vocabulaires" onclick="question()">
+    </div>
+
+    <div class="questions" id="qs"></div>
+
+    <div id="validation">
+      <input type="button" style="visibility: hidden; display: none;" value= "Valider" id="btnValid" onclick="validate()"></input>
+      <input type="button" style="visibility: hidden; display: none;" value= "Suivant" id="btnNext" onclick="changeSelect()"></input>
+      <div id="score"></div>
+    </div>
+
+    
+
+
+</body>
+</html>
