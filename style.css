@@ -228,3 +228,33 @@ a{
 td{
     width: 100px;
 }
+
+@media (max-width: 1000px) {
+    #btnNext {
+        padding: 0px;
+        width: 100%;
+        margin: 0px;
+        margin-top: 10px;
+    }
+
+    .btnDiff {
+        padding: 0px;
+        width: 100%;
+        margin: 0px;
+        margin-top: 10px;
+    }
+
+    #inpDIV {
+        padding: 0px;
+        width: 100%;
+        margin: 0px;
+        margin-top: 10px;
+    }
+
+    #inpDIVAllWords {
+        padding: 0px;
+        width: 100%;
+        margin: 0px;
+        margin-top: 10px;
+    }
+}
