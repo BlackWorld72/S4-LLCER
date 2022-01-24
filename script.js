@@ -99,8 +99,8 @@ function changeSelect() {
 function validate() {
 
   x = document.getElementById("inpDIV")
-
-  h2 = document.createElement("h4")
+  x.append(document.createElement("br"))
+  h2 = document.createElement("span")
   h2.setAttribute("style","color: green;")
 
   if (lang == 1) {
