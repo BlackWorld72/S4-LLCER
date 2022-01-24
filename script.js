@@ -36,7 +36,7 @@ function changeSelectAllWord(value) {
   console.log(sss)
   x = document.getElementById("jetest")
   x.innerHTML = "";
-  
+
   if (value == "all") {
     for (let j = 0 ; j < sss.cat.length ; j++) {
       h2 = document.createElement("h2")
@@ -44,7 +44,7 @@ function changeSelectAllWord(value) {
       x.append(h2)
       for (let i = 0 ; i < sss.cat[j].words.length ; i++) {
         h2 = document.createElement("h3")
-        h2.setAttribute("id","inpDIV")
+        h2.setAttribute("id","inpDIVAllWords")
         h2.textContent = sss.cat[j].words[i].fr + " > " + sss.cat[j].words[i].al
         x.append(h2)
       }
@@ -58,7 +58,7 @@ function changeSelectAllWord(value) {
     console.log(j)
     for (let i = 0 ; i < sss.cat[j].words.length ; i++) {
       h2 = document.createElement("h3")
-      h2.setAttribute("id","inpDIV")
+      h2.setAttribute("id","inpDIVAllWords")
       h2.textContent = sss.cat[j].words[i].fr + " > " + sss.cat[j].words[i].al
       x.append(h2)
     }
