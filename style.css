@@ -229,7 +229,7 @@ td{
     width: 100px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1200px) {
     .btnDiff {
         margin: 10px;
         margin-bottom: 20px;
