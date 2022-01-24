@@ -34,7 +34,6 @@ function listWords(data) {
 }
 
 function changeSelectAllWord(value) {
-  console.log(sss)
   x = document.getElementById("jetest")
   x.innerHTML = "";
 
@@ -56,7 +55,7 @@ function changeSelectAllWord(value) {
     h2 = document.createElement("h2")
     h2.textContent = "Catégorie : " + (j+1)
     x.append(h2)
-    console.log(j)
+
     for (let i = 0 ; i < sss.cat[j].words.length ; i++) {
       h2 = document.createElement("h3")
       h2.setAttribute("id","inpDIVAllWords")
@@ -64,7 +63,6 @@ function changeSelectAllWord(value) {
       x.append(h2)
     }
   }
-  console.log(sss)
 }
 
 function changeSelect() {
@@ -81,8 +79,6 @@ function changeSelect() {
 
   word = Math.floor(Math.random() * data.cat[cat].words.length)
   lang = Math.floor(Math.random() * 2)
-
-  console.log(cat+ " "+ word + " ")
 
   h2 = document.createElement("h3")
   h2.setAttribute("id","inpDIV")
@@ -104,7 +100,7 @@ function validate() {
 
   x = document.getElementById("inpDIV")
 
-  h2 = document.createElement("h3")
+  h2 = document.createElement("h4")
   h2.setAttribute("style","color: green;")
 
   if (lang == 1) {
