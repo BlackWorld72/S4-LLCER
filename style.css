@@ -229,10 +229,15 @@ td{
     width: 100px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
+    body {
+        font-size: 20px;
+    }
+
     .btnDiff {
-        margin: 10px;
+        margin: 0px;
         margin-bottom: 20px;
+        width: 100%;
     }
 
     h2 {
@@ -240,14 +245,33 @@ td{
     }
 
     #inpDIVAllWords {
-        width: 60%;
+        width: 100%;
+        margin: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 5px;
+        padding: 0px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
     #inpDIV {
-        width: 60%;
+        width: 100%;
+        margin: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 10px;
+        padding: 0px;
+        padding-top: 20px;
     }
 
     #btnValid {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #btnNext {
+        width: 100%;
         margin-top: 10px;
     }
 }
