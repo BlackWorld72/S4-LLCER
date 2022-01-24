@@ -10,6 +10,7 @@ function listWords(data) {
 
   select = document.createElement("select")
   select.setAttribute("onChange", "changeSelectAllWord(this.value)")
+  select.setAttribute("class", "inpanswer")
 
   let opt = document.createElement('option')
   opt.textContent = "Tout"
@@ -128,6 +129,7 @@ function question(data) {
   select = document.createElement("select")
   select.setAttribute("onChange", "changeSelect()")
   select.setAttribute("id", "selecttest")
+  select.setAttribute("class", "inpanswer")
 
   let opt = document.createElement('option')
   opt.textContent = "Tout"
