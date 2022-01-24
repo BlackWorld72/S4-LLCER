@@ -106,7 +106,7 @@ function changeSelect() {
 
 function validate() {
 
-  x = document.getElementById("jetest")
+  x = document.getElementById("inpDIV")
 
   h2 = document.createElement("h3")
   h2.setAttribute("style","color: green;")
