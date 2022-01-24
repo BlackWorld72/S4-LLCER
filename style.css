@@ -229,3 +229,25 @@ td{
     width: 100px;
 }
 
+@media (max-width: 640px) {
+    .btnDiff {
+        margin: 10px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    #inpDIVAllWords {
+        width: 60%;
+    }
+
+    #inpDIV {
+        width: 60%;
+    }
+
+    #btnValid {
+        margin-top: 10px;
+    }
+}
