@@ -117,19 +117,75 @@ civilisation =
                 }
             ]
         },
-        {
-            "words": [
+        { 
+            "words" : [
                 {
-                    "fr": "Blabla",
-                    "al": "Niederlage"
+                    "fr":" se dérouler",
+                    "al":"Verlaufen "
                 },
                 {
-                    "fr": "Blablou",
-                    "al": "Selbstmord begehen"
+                    "fr":" espace de colonisation",
+                    "al":"Siedlungsraum "
                 },
                 {
-                    "fr": "Blibli",
-                    "al": "Der Untergang"
+                    "fr":" colonisation",
+                    "al":"Siedlungs "
+                },
+                {
+                    "fr":" dédommagement",
+                    "al":"Entschäldigung "
+                },
+                {
+                    "fr":" démontage",
+                    "al":"Demontieren "
+                },
+                {
+                    "fr":" ordre de paix",
+                    "al":"Friedenordnung "
+                },
+                {
+                    "fr":" maison des pauvres",
+                    "al":"Armenhaus "
+                },
+                {
+                    "fr":" conseil de contrôle",
+                    "al":"Kontrollrat "
+                },
+                {
+                    "fr":" décartellisation",
+                    "al":"Dekartellisierung "
+                },
+                {
+                    "fr":" le sondage",
+                    "al":"Die Umfrage "
+                },
+                {
+                    "fr":" démocratisation",
+                    "al":"Demokratisierung "
+                },
+                {
+                    "fr":" coup de projecteur sur l'Ouest",
+                    "al":"Westverscbiebung "
+                },
+                {
+                    "fr":" sphère",
+                    "al":"Sphäre "
+                },
+                {
+                    "fr":" ville \"satellite\" du bloc de l'Est",
+                    "al":"\"Satellitenstadt\" des Ostblocks "
+                },
+                {
+                    "fr":" zone tampon",
+                    "al":"Puffer "
+                },
+                {
+                    "fr":" l'année de tournement",
+                    "al":"Das Wendejahr "
+                },
+                {
+                    "fr":" le.s regret.",
+                    "al":"Bedauern "
                 }
             ]
         }
