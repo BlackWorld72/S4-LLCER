@@ -108,10 +108,10 @@ function validate() {
   h2.setAttribute("style","color: green;")
 
   if (lang == 1) {
-    h2.textContent = civilisation.cat[cat].words[word].al
+    h2.textContent = sss.cat[cat].words[word].al
   }
   else {
-    h2.textContent = civilisation.cat[cat].words[word].fr
+    h2.textContent = sss.cat[cat].words[word].fr
   }
 
   x.append(h2)
