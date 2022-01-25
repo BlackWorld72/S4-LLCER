@@ -2,8 +2,30 @@ var cat
 var word
 var lang
 var sss
+var isIn = false
+
+document.addEventListener('keydown', function(e) {
+  if((e.code == "Space" || e.code == "Enter") && isIn) {
+    if (isHidden(document.getElementById("btnNext"))) {
+      validate()
+    }
+    else {
+      changeSelect()
+    }
+  }
+});
+
+function isHidden(el) {
+  var style = window.getComputedStyle(el);
+  return (style.display === 'none')
+}
+
+function testkey() {
+  console.log("salut bg")
+}
 
 function listWords(data) {
+  isIn = false
   qs = document.getElementById("qs")
   document.getElementById("qs").innerHTML = "";
   sss = data
@@ -117,6 +139,7 @@ function validate() {
 }
 
 function question(data) {
+  isIn = true
   qs = document.getElementById("qs")
   document.getElementById("qs").innerHTML = "";
 
@@ -147,6 +170,7 @@ function question(data) {
 
   document.getElementById("btnNext").setAttribute("style", "visibility: hidden; display: none;")
   document.getElementById("btnValid").setAttribute("style", "visibility: show;")
+  document.getElementById("btnValid").focus()
 
   changeSelect()
 }

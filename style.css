@@ -237,6 +237,13 @@ td{
         margin-top: 10px;
     }
 
+    #btnValid {
+        padding: 0px;
+        width: 100%;
+        margin: 0px;
+        margin-top: 10px;
+    }
+
     .btnDiff {
         padding: 0px;
         width: 100%;
