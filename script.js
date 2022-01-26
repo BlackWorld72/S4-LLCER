@@ -4,6 +4,17 @@ var lang
 var sss
 var isIn = false
 
+var selectedCat = []
+
+function contain(tab, val) {
+  for (let i = 0 ; i < tab.length ; i++) {
+    if (tab[i] == val) {
+      return i
+    }
+  }
+  return -1
+}
+
 document.addEventListener('keydown', function(e) {
   if((e.code == "Space" || e.code == "Enter") && isIn) {
     if (isHidden(document.getElementById("btnNext"))) {
@@ -87,6 +98,18 @@ function changeSelectAllWord(value) {
   }
 }
 
+function clearSelectStyle(select) {
+  let value=1
+  while (true) {
+    i = document.getElementById("opt" + value)
+    if (i == null) {
+      return
+    }
+    i.setAttribute("style","background-color: #333;")
+    value += 1
+  }
+}
+
 function changeSelect() {
   x = document.getElementById("jetest")
   x.innerHTML = "";
@@ -94,10 +117,22 @@ function changeSelect() {
   value = document.getElementById("selecttest").value
   if (value == "all") {
     cat = Math.floor(Math.random() * data.cat.length)
+    selectedCat = []
+    clearSelectStyle(document.getElementById("selecttest"))
   }
   else {
-    cat = parseInt(value)-1
+    tmp = contain(selectedCat, parseInt(value)-1)
+    if (tmp == -1) { // Not selected
+      selectedCat.push(parseInt(value)-1)
+      document.getElementById("opt" + value).setAttribute("style", "background-color: green;")
+    }
+    else { //already selected
+      selectedCat.splice(tmp, 1)
+      document.getElementById("opt" + value).setAttribute("style","background-color: #333;")
+    }
+    cat = selectedCat[Math.floor(Math.random() * selectedCat.length)]
   }
+
 
   word = Math.floor(Math.random() * data.cat[cat].words.length)
   lang = Math.floor(Math.random() * 2)
@@ -162,6 +197,7 @@ function question(data) {
     opt = document.createElement('option')
     opt.textContent = j+1
     opt.setAttribute("value", j+1);
+    opt.setAttribute("id", "opt" + (j+1))
     select.append(opt)
   }
 
