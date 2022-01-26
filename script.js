@@ -3,6 +3,8 @@ var word
 var lang
 var sss
 var isIn = false
+var book
+var type
 
 var selectedCat = []
 
@@ -107,6 +109,26 @@ function clearSelectStyle(select) {
     }
     i.setAttribute("style","background-color: #333;")
     value += 1
+  }
+}
+
+function resume() {
+  if (type == "cm") {
+    for (let i = 0 ; i < livreCM.livre[book].resume.length ; i++) {
+      p = document.createElement("p")
+      p.textContent = livreCM.livre[book].resume[i]
+      document.getElementById("txt").append(p)
+      document.getElementById("txt").append(document.createElement("br"))
+    } 
+    document.getElementById("txt").setAttribute("style", "visibility: show;")
+  }
+}
+
+function choiceBook(t, b) {
+  if (t == "cm") {
+    document.getElementById("typelivre").setAttribute("style", "visibility: show;")
+    book = b
+    type = t
   }
 }
 

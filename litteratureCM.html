@@ -5,6 +5,7 @@
   <title>S4 - LLCER</title>
   <link rel="stylesheet" href="style.css">
   <script type="text/javascript" src="grammaire.js"></script>
+  <script type="text/javascript" src="livreCM.js"></script>
   <script type="text/javascript" src="words.js"></script>
   <script type="text/javascript" src="script.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,11 +22,18 @@
 
     <br>
     <div class="diff">
-      <input type="button" class="btnDiff" value= "Liste mots" onclick="listWords(civilisation)">
-      <input type="button" class="btnDiff" value= "Vocabulaires" onclick="question(civilisation)">
+      <input type="button" class="btnLivre" value= "Thomas Mann - Mario und der Zauberer" onclick="choiceBook('cm', 0)">
+      <input type="button" class="btnLivre" value= "Crista Wolf - Der geteilte Himmel" onclick="choiceBook('cm', 1)">
+      <input type="button" class="btnLivre" value= "Heinrich Böll - Die verlorene Ehre der Katharina Blum" onclick="choiceBook('cm', 2)">
     </div>
 
-    <div class="questions" id="qs"></div>
+    <div class="type" id="typelivre" style="visibility: hidden;">
+      <input type="button" class="btnDiff" value= "Résumé" onclick="resume('cm', 0)">
+      <input type="button" class="btnDiff" value= "Informations" onclick="choiceBook('cm', 1)">
+      <input type="button" class="btnDiff" value= "Livre" onclick="choiceBook('cm', 2)">
+    </div>
+
+    <div class="questions" style="visibility: hidden;" id="txt"></div>
 
     <div id="validation">
       <input type="button" style="visibility: hidden; display: none;" value= "Valider" id="btnValid" onclick="validate()"></input>
