@@ -34,6 +34,47 @@ p{
     margin: auto;
 }
 
+.textarea {
+    background-color: rgb(126, 126, 126);
+    border: none;
+    color: white;
+    margin: 20px;
+    width: 40%;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 15px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: solid;  
+    min-height: 170px;
+    border-radius: 10px 10px 10px 10px;
+    border-color: rgb(153, 151, 151);
+}
+
+#tradiv {
+    border: solid;
+    border-radius: 12px;
+    border-color: white;
+    background-color: #333;
+    text-align: center;
+    padding: 20px;
+    width: 80%;/* ta valeur */
+    margin: auto;
+}
+
+#noteDiv {
+    border: solid;
+    border-radius: 12px;
+    border-color: white;
+    background-color: #333;
+    text-align: left;
+    padding: 20px;
+    width: 80%;/* ta valeur */
+    margin: auto;
+}
+
 #txt {
     border: solid;
     border-radius: 12px;
@@ -78,7 +119,6 @@ p{
 }
 
 .type {
-    margin-top: 20px;
     text-align: center;
 }
 

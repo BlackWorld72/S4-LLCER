@@ -17,15 +17,22 @@
         <li><a href="litteratureCM.html">Littérature CM</a></li>
         <li><a href="litteratureTD.html">Littérature TD</a></li>
         <li><a href="traduction.html">Traduction</a></li>
+        <li><a href="notes.html">Notes</a></li>
     </ul> 
 
     <br>
     <div class="diff">
-      <input type="button" class="btnDiff" value= "Liste mots" onclick="listWords(civilisation)">
-      <input type="button" class="btnDiff" value= "Vocabulaires" onclick="question(civilisation)">
+      <input type="button" class="btnLivre" value= "Bertolt Brecht - Flüchtlingsgespräche" onclick="choiceBook('td', 0)">
+      <input type="button" class="btnLivre" value= "Peter Müller - Migranten erzählen" onclick="choiceBook('td', 1)">
     </div>
 
-    <div class="questions" id="qs"></div>
+    <div class="type" id="typelivre" style="visibility: hidden;">
+      <input type="button" class="btnDiff" value= "Résumé" onclick="resume('td', 0)">
+      <input type="button" class="btnDiff" value= "Informations" onclick="choiceBook('td', 1)">
+      <input type="button" class="btnDiff" value= "Livre" onclick="choiceBook('td', 2)">
+    </div>
+
+    <div class="questions" style="visibility: hidden;" id="txt"></div>
 
     <div id="validation">
       <input type="button" style="visibility: hidden; display: none;" value= "Valider" id="btnValid" onclick="validate()"></input>

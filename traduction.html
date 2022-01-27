@@ -17,20 +17,39 @@
         <li><a href="litteratureCM.html">Littérature CM</a></li>
         <li><a href="litteratureTD.html">Littérature TD</a></li>
         <li><a href="traduction.html">Traduction</a></li>
+        <li><a href="notes.html">Notes</a></li>
     </ul> 
 
     <br>
     <div class="diff">
-      <input type="button" class="btnDiff" value= "Liste mots" onclick="listWords(civilisation)">
-      <input type="button" class="btnDiff" value= "Vocabulaires" onclick="question(civilisation)">
+      <input type="button" class="btnDiff" value= "Deepl" onclick="">
+      <input type="button" class="btnDiff" value= "Leo" onclick="">
+      <input type="button" class="btnDiff" value= "Reverso" onclick="">
+      <input type="button" class="btnDiff" value= "Linguee" onclick="">
+      <input type="button" class="btnDiff" value= "Pons" onclick="">
     </div>
 
-    <div class="questions" id="qs"></div>
-
-    <div id="validation">
-      <input type="button" style="visibility: hidden; display: none;" value= "Valider" id="btnValid" onclick="validate()"></input>
-      <input type="button" style="visibility: hidden; display: none;" value= "Suivant" id="btnNext" onclick="changeSelect()"></input>
-      <div id="score"></div>
+    <div id="tradiv">
+      <div style="text-align: center; margin: auto;">
+        <select class="inpanswer" style="float: left; margin-left: 5%;">
+          <option>Allemand</option>
+          <option>Anglais</option>
+          <option>Français</option>
+        </select>
+        <select class="inpanswer" style="margin-left: 5%;">
+          <option>Allemand</option>
+          <option>Anglais</option>
+          <option>Français</option>
+        </select>
+      </div>
+      <div style="display: flex;">
+        <div class="textarea">
+          <textarea style="width: 100%; padding:5px; min-height: 160px; resize: none; border-radius: 10px 10px 10px 10px; background-color: rgb(200, 200, 200);"></textarea>
+        </div>
+        <div class="textarea">
+          <textarea style="width: 100%; padding:5px; min-height: 160px; resize: none; border-radius: 10px 10px 10px 10px; background-color: rgb(200, 200, 200);"></textarea>
+        </div>
+      </div>
     </div>
 
     

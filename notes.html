@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>S4 - LLCER</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="grammaire.js"></script>
+  <script type="text/javascript" src="words.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="civilisation.html">Civilisation</a></li>
+        <li><a href="grammaire.html">Grammaire</a></li>
+        <li><a href="litteratureCM.html">Littérature CM</a></li>
+        <li><a href="litteratureTD.html">Littérature TD</a></li>
+        <li><a href="traduction.html">Traduction</a></li>
+        <li><a href="notes.html">Notes</a></li>
+    </ul> 
+
+    <br>
+    <div class="diff">
+      <input type="button" class="btnDiff" value= "Mono Licence" onclick="">
+      <input type="button" class="btnDiff" value= "Double Licence" onclick="">
+    </div>
+
+    <div id="noteDiv">
+      <div id="noteyaya">
+        <h2 style="text-decoration: underline; font-size: larger; text-align: left;">UE Étude et pratique de la langue</h2>
+        <div style="display: flex;">
+          <h3>Grammaire</h3>
+          <input onkeypress="isNb(event)" id="note0" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Linguistique</h3>
+          <input onkeypress="isNb(event)" id="note1" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Maîtrise et atelier</h3>
+          <input onkeypress="isNb(event)" id="note2" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Version</h3>
+          <input onkeypress="isNb(event)" id="note3" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Thème</h3>
+          <input onkeypress="isNb(event)" id="note4" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Didactique</h3>
+          <input onkeypress="isNb(event)" id="note5" style="margin-left: 100px;" type="text">
+        </div>
+        <h2 style="text-decoration: underline; font-size: larger; text-align: left;">UE Culture</h2>
+        <div style="display: flex;">
+          <h3>Civilisation CM</h3>
+          <input onkeypress="isNb(event)" id="note6" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Civilisation TD</h3>
+          <input onkeypress="isNb(event)" id="note7" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Littérature CM</h3>
+          <input onkeypress="isNb(event)" id="note8" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Littérature TD</h3>
+          <input onkeypress="isNb(event)" id="note9" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Histoire des arts</h3>
+          <input onkeypress="isNb(event)" id="note10" style="margin-left: 100px;" type="text">
+        </div>
+        <h2 style="text-decoration: underline; font-size: larger; text-align: left;">UE Préprofessionalisation</h2>
+        <div style="display: flex;">
+          <h3>Traduction Spécialisée</h3>
+          <input onkeypress="isNb(event)" id="note11" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Langues, Médias et Numérique</h3>
+          <input onkeypress="isNb(event)" id="note12" style="margin-left: 100px;" type="text">
+        </div>
+        <h2 style="text-decoration: underline; font-size: larger; text-align: left;">UE Ouverture</h2>
+        <div style="display: flex;">
+          <h3>Anglais</h3>
+          <input onkeypress="isNb(event)" id="note13" style="margin-left: 100px;" type="text">
+        </div>
+        <h1 id="moyenne">Moyenne : 0</h1>
+      </div>
+      <input type="button" class="btnDiff" value= "Calculer la note" onclick="moyenne()">
+      <div id="noteraph" style="display: none; visibility: hidden;">
+
+      </div>
+    </div>
+
+    
+
+
+</body>
+</html>

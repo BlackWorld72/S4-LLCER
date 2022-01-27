@@ -7,6 +7,7 @@ var book
 var type
 
 var selectedCat = []
+var coefyaya = [2,3,2,1.5,1.5,2,2,1.5,2,1.5,2,3,3,3]
 
 function contain(tab, val) {
   for (let i = 0 ; i < tab.length ; i++) {
@@ -33,8 +34,41 @@ function isHidden(el) {
   return (style.display === 'none')
 }
 
-function testkey() {
-  console.log("salut bg")
+function isNb(evt) {
+  var theEvent = evt || window.event;
+  
+    // Handle paste
+    if (theEvent.type === 'paste') {
+        key = event.clipboardData.getData('text/plain');
+    } else {
+    // Handle key press
+        var key = theEvent.keyCode || theEvent.which;
+        key = String.fromCharCode(key);
+    }
+    var regex = /[0-9\.\-]|\./;
+    if( !regex.test(key) ) {
+      theEvent.returnValue = false;
+      if(theEvent.preventDefault) theEvent.preventDefault();
+    }
+}
+
+function moyenne() {
+  i = 0
+  moy = 0
+  while(true) {
+    d = document.getElementById("note" + i)
+    if (d == null) {
+      break
+    }
+    if (document.getElementById("note" + i).value != "") {
+      console.log(d.value)
+      moy += (parseFloat(d.value)*coefyaya[i])
+    }
+    i+=1
+  }
+  moy = moy/30
+  moy = Math.floor(moy*100)/100
+  document.getElementById("moyenne").textContent = "Moyenne : " + moy
 }
 
 function listWords(data) {
@@ -118,9 +152,11 @@ function resume() {
       p = document.createElement("p")
       p.textContent = livreCM.livre[book].resume[i]
       document.getElementById("txt").append(p)
-      document.getElementById("txt").append(document.createElement("br"))
+      br = document.createElement("br")
+      br.setAttribute("style", "width: 30px;")
+      document.getElementById("txt").append()
     } 
-    document.getElementById("txt").setAttribute("style", "visibility: show;")
+    document.getElementById("txt").setAttribute("style", "visibility: show;  text-align: left;")
   }
 }
 
