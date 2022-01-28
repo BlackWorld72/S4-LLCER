@@ -22,38 +22,35 @@
 
     <br>
     <div class="diff">
-      <input type="button" class="btnDiff" value= "Deepl" onclick="">
-      <input type="button" class="btnDiff" value= "Leo" onclick="">
-      <input type="button" class="btnDiff" value= "Reverso" onclick="">
-      <input type="button" class="btnDiff" value= "Linguee" onclick="">
-      <input type="button" class="btnDiff" value= "Pons" onclick="">
+      <input type="button" class="btnDiff" value= "Deepl" onclick="changeTranslation(0)">
+      <input type="button" class="btnDiff" value= "Leo" onclick="changeTranslation(1)">
+      <input type="button" class="btnDiff" value= "Reverso" onclick="changeTranslation(2)">
+      <input type="button" class="btnDiff" value= "Linguee" onclick="changeTranslation(3)">
+      <input type="button" class="btnDiff" value= "Pons" onclick="changeTranslation(4)">
     </div>
 
-    <div id="tradiv">
+    <div id="tradiv" style="text-align: center;">
       <div style="text-align: center; margin: auto;">
-        <select class="inpanswer" style="float: left; margin-left: 5%;">
-          <option>Allemand</option>
-          <option>Anglais</option>
-          <option>Français</option>
+        <select id="intrad" class="inpanswer" style="float: left; margin-left: 5%;">
+          <option value="DE">Allemand</option>
+          <option value="EN">Anglais</option>
+          <option value="FR">Français</option>
         </select>
-        <select class="inpanswer" style="margin-left: 5%;">
-          <option>Allemand</option>
-          <option>Anglais</option>
-          <option>Français</option>
+        <select id="outtrad" class="inpanswer" style="margin-left: 5%;">
+          <option value="DE">Allemand</option>
+          <option value="EN" selected="selected">Anglais</option>
+          <option value="FR">Français</option>
         </select>
       </div>
-      <div style="display: flex;">
+      <div style="display: flex; text-align: center;">
         <div class="textarea">
-          <textarea style="width: 100%; padding:5px; min-height: 160px; resize: none; border-radius: 10px 10px 10px 10px; background-color: rgb(200, 200, 200);"></textarea>
+          <textarea id="intranslate" style="width: 100%; padding:5px; min-height: 160px; resize: none; border-radius: 10px 10px 10px 10px; background-color: rgb(200, 200, 200);"></textarea>
         </div>
         <div class="textarea">
-          <textarea style="width: 100%; padding:5px; min-height: 160px; resize: none; border-radius: 10px 10px 10px 10px; background-color: rgb(200, 200, 200);"></textarea>
+          <p id="outtranslate" style="margin-top: 0; margin-bottom: 0; font-size: 14px; text-align: left; color: black; width: 100%; padding:5px; min-height: 160px; resize: none; border-radius: 10px 10px 10px 10px; background-color: rgb(200, 200, 200);"></p>
         </div>
       </div>
+      <input type="button" class="btnDiff" value= "Traduire" style="background-color:rgb(100, 100, 100); margin-top: 10px; margin-bottom: 10px; width: 70%" onclick="traduit()">
     </div>
-
-    
-
-
 </body>
 </html>

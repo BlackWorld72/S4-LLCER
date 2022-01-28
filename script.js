@@ -5,9 +5,64 @@ var sss
 var isIn = false
 var book
 var type
+var isYaya = false
 
 var selectedCat = []
+
 var coefyaya = [2,3,2,1.5,1.5,2,2,1.5,2,1.5,2,3,3,3]
+var coefraph = [3,3,3,1.5,1.5,3,3,3,3,2,3,2,1.5,1.5,2,2,1.5,2,1.5,2,3]
+
+var activeTranslate = -1
+var translate = [["",""],["",""],["",""],["",""],["",""]]
+
+function changeTranslation(n) {
+  
+  if (activeTranslate != -1) {
+    translate[activeTranslate][0] = document.getElementById("intranslate").value
+    translate[activeTranslate][1] = document.getElementById("outtranslate").value
+  }
+
+  activeTranslate = n
+  document.getElementById("intranslate").value = translate[activeTranslate][0]
+  document.getElementById("outtranslate").value = translate[activeTranslate][1]
+}
+
+function sendRequestTrad(text, inlang, outlang) {
+  var req = new XMLHttpRequest()
+  url = ""
+  switch (activeTranslate) {
+    case 0:
+      url = "https://api-free.deepl.com/v2/translate?auth_key=10196129-d4d9-9602-fed2-15c0592ce4ef:fx&text=" + text + "&source_lang=" + inlang + "&target_lang=" + outlang
+      break
+    default:
+      return
+  }
+  req.open("GET",url,true)
+  req.send()
+  req.onreadystatechange = (e) => {
+    val = JSON.parse(req.responseText)
+    final = ""
+    console.log(val)
+    switch(activeTranslate) {
+      case 0:
+        final = val.translations[0].text
+        break
+      default: 
+        return
+    }
+    document.getElementById("outtranslate").textContent = final
+  }
+
+}
+
+function traduit() {
+  input = document.getElementById("intranslate").value
+  source_lang = document.getElementById("intrad").options[document.getElementById("intrad").selectedIndex].value
+  target_lang = document.getElementById("outtrad").options[document.getElementById("outtrad").selectedIndex].value
+  console.log(source_lang + " : " + input)
+  console.log(target_lang + " : " + input)
+  sendRequestTrad(input, source_lang, target_lang)
+}
 
 function contain(tab, val) {
   for (let i = 0 ; i < tab.length ; i++) {
@@ -55,20 +110,60 @@ function isNb(evt) {
 function moyenne() {
   i = 0
   moy = 0
+  ang = 0
   while(true) {
-    d = document.getElementById("note" + i)
+    if (isYaya) {
+      d = document.getElementById("note" + i)
+    }
+    else {
+      d = document.getElementById("rnote" + i)
+    }
+    
     if (d == null) {
       break
     }
-    if (document.getElementById("note" + i).value != "") {
-      console.log(d.value)
-      moy += (parseFloat(d.value)*coefyaya[i])
+    if (d.value != "") {
+      if (isYaya) {
+        moy += (parseFloat(d.value)*coefyaya[i])
+      }
+      else {
+        if (i == 9) {
+          ang = moy
+          moy = (parseFloat(d.value)*coefraph[i])
+        }
+        else {
+          moy += (parseFloat(d.value)*coefraph[i])
+        }console.log(i + " " + moy)
+      }
     }
     i+=1
   }
-  moy = moy/30
-  moy = Math.floor(moy*100)/100
-  document.getElementById("moyenne").textContent = "Moyenne : " + moy
+  if (isYaya) {
+    moy = moy/30
+    moy = Math.floor(moy*100)/100
+    document.getElementById("moyenne").textContent = "Moyenne : " + moy
+  }
+  else {
+    ang = ang/24
+    ang = Math.floor(ang*100)/100
+    
+    moy = moy/24
+    moy = Math.floor(moy*100)/100
+    document.getElementById("moyenne").textContent = "Moyenne Anglais : " + ang + " Moyenne Allemand : " + moy
+  }
+}
+
+function note(n) {
+  document.getElementById("noteDiv").setAttribute("style","visibility: show; display: block;")
+  if (n == 0) {
+    isYaya = true
+    document.getElementById("noteyaya").setAttribute("style","visibility: show; display: block;")
+    document.getElementById("noteraph").setAttribute("style","display: none; visibility: hidden;")
+  } else {
+    isYaya = false
+    document.getElementById("noteraph").setAttribute("style","visibility: show; display: block;")
+    document.getElementById("noteyaya").setAttribute("style","display: none; visibility: hidden;")
+  }
 }
 
 function listWords(data) {

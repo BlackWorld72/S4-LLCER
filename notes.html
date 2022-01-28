@@ -22,12 +22,12 @@
 
     <br>
     <div class="diff">
-      <input type="button" class="btnDiff" value= "Mono Licence" onclick="">
-      <input type="button" class="btnDiff" value= "Double Licence" onclick="">
+      <input type="button" class="btnDiff" value= "Mono Licence" onclick="note(0)">
+      <input type="button" class="btnDiff" value= "Double Licence" onclick="note(1)">
     </div>
 
-    <div id="noteDiv">
-      <div id="noteyaya">
+    <div id="noteDiv" style="display: none; visibility: hidden;">
+      <div id="noteyaya" style="display: none; visibility: hidden;">
         <h2 style="text-decoration: underline; font-size: larger; text-align: left;">UE Étude et pratique de la langue</h2>
         <div style="display: flex;">
           <h3>Grammaire</h3>
@@ -88,12 +88,103 @@
           <h3>Anglais</h3>
           <input onkeypress="isNb(event)" id="note13" style="margin-left: 100px;" type="text">
         </div>
-        <h1 id="moyenne">Moyenne : 0</h1>
       </div>
-      <input type="button" class="btnDiff" value= "Calculer la note" onclick="moyenne()">
       <div id="noteraph" style="display: none; visibility: hidden;">
-
+        <h1 style="text-decoration: underline;"><b>Anglais</b></h1>
+        <h2 style="text-decoration: underline; font-size: larger; text-align: left;">UE Etude et pratique de la langue</h2>
+        <div style="display: flex;">
+          <h3>Etude de la langue</h3>
+          <input onkeypress="isNb(event)" id="rnote0" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Linguistique</h3>
+          <input onkeypress="isNb(event)" id="rnote1" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Communication Ecrite et Orale</h3>
+          <input onkeypress="isNb(event)" id="rnote2" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Version</h3>
+          <input onkeypress="isNb(event)" id="rnote3" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Thème</h3>
+          <input onkeypress="isNb(event)" id="rnote4" style="margin-left: 100px;" type="text">
+        </div>
+        <h2 style="text-decoration: underline; font-size: larger; text-align: left;">UE Culture</h2>
+        <div style="display: flex;">
+          <h3>Civilisation</h3>
+          <input onkeypress="isNb(event)" id="rnote5" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Littérature</h3>
+          <input onkeypress="isNb(event)" id="rnote6" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Patrimoine</h3>
+          <input onkeypress="isNb(event)" id="rnote7" style="margin-left: 100px;" type="text">
+        </div>
+        <h2 style="text-decoration: underline; font-size: larger; text-align: left;">UE Ouverture</h2>
+        <div style="display: flex;">
+          <h3>Italien</h3>
+          <input onkeypress="isNb(event)" id="rnote8" style="margin-left: 100px;" type="text">
+        </div>
+        <h1 style="text-decoration: underline;"><b>Allemand</b></h1>
+        <h2 style="text-decoration: underline; font-size: larger; text-align: left;">UE Etude et pratique de la langue</h2>
+        <div style="display: flex;">
+          <h3>Grammaire</h3>
+          <input onkeypress="isNb(event)" id="rnote9" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Linguistique</h3>
+          <input onkeypress="isNb(event)" id="rnote10" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Maîtrise et atelier</h3>
+          <input onkeypress="isNb(event)" id="rnote11" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Version</h3>
+          <input onkeypress="isNb(event)" id="rnote12" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Thème</h3>
+          <input onkeypress="isNb(event)" id="rnote13" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Didactique</h3>
+          <input onkeypress="isNb(event)" id="rnote14" style="margin-left: 100px;" type="text">
+        </div>
+        <h2 style="text-decoration: underline; font-size: larger; text-align: left;">UE Culture</h2>
+        <div style="display: flex;">
+          <h3>Civilisation du monde Germanophone</h3>
+          <input onkeypress="isNb(event)" id="rnote15" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Civilisation - Analyse de document</h3>
+          <input onkeypress="isNb(event)" id="rnote16" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Histoire de la Littérature Germanophone</h3>
+          <input onkeypress="isNb(event)" id="rnote17" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Littérature - Etude de textes</h3>
+          <input onkeypress="isNb(event)" id="rnote18" style="margin-left: 100px;" type="text">
+        </div>
+        <div style="display: flex;">
+          <h3>Histoire des arts</h3>
+          <input onkeypress="isNb(event)" id="rnote19" style="margin-left: 100px;" type="text">
+        </div>
+        <h2 style="text-decoration: underline; font-size: larger; text-align: left;">UE Ouverture</h2>
+        <div style="display: flex;">
+          <h3>Italien</h3>
+          <input onkeypress="isNb(event)" id="rnote20" style="margin-left: 100px;" type="text">
+        </div>
       </div>
+      <h1 id="moyenne">Moyenne : 0</h1>
+      <input type="button" class="btnDiff" value= "Calculer la note" onclick="moyenne()">
     </div>
 
     
