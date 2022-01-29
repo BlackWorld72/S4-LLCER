@@ -79,7 +79,7 @@ document.addEventListener('keydown', function(e) {
       validate()
     }
     else {
-      changeSelect()
+      changeSelect(false)
     }
   }
 });
@@ -342,30 +342,40 @@ function choiceBook(t, b) {
   btnTypeLivreColor("")
 }
 
-function changeSelect() {
+function changeSelect(isNew) {
   x = document.getElementById("jetest")
   x.innerHTML = "";
   data = sss
   value = document.getElementById("selecttest").value
-  if (value == "all") {
-    cat = Math.floor(Math.random() * data.cat.length)
-    selectedCat = []
-    clearSelectStyle(document.getElementById("selecttest"))
+  if (isNew) {
+    if (value == "all") {
+      cat = Math.floor(Math.random() * data.cat.length)
+      selectedCat = []
+      clearSelectStyle(document.getElementById("selecttest"))
+    }
+    else {
+      tmp = contain(selectedCat, parseInt(value)-1)
+      if (tmp == -1) { // Not selected
+        selectedCat.push(parseInt(value)-1)
+        document.getElementById("opt" + value).setAttribute("style", "background-color: green;")
+      }
+      else { //already selected
+        selectedCat.splice(tmp, 1)
+        document.getElementById("opt" + value).setAttribute("style","background-color: #333;")
+      }
+      cat = selectedCat[Math.floor(Math.random() * selectedCat.length)]
+    }
   }
   else {
-    tmp = contain(selectedCat, parseInt(value)-1)
-    if (tmp == -1) { // Not selected
-      selectedCat.push(parseInt(value)-1)
-      document.getElementById("opt" + value).setAttribute("style", "background-color: green;")
+    if (value == "all") {
+      cat = Math.floor(Math.random() * data.cat.length)
     }
-    else { //already selected
-      selectedCat.splice(tmp, 1)
-      document.getElementById("opt" + value).setAttribute("style","background-color: #333;")
+    else {
+      cat = selectedCat[Math.floor(Math.random() * selectedCat.length)] 
     }
-    cat = selectedCat[Math.floor(Math.random() * selectedCat.length)]
   }
 
-
+  console.log(data.cat[cat].words)
   word = Math.floor(Math.random() * data.cat[cat].words.length)
   lang = Math.floor(Math.random() * 2)
 
@@ -378,7 +388,7 @@ function changeSelect() {
   else {
     h2.textContent = data.cat[cat].words[word].al
   }
-
+  console.log("Coucou")
   x.append(h2)
 
   document.getElementById("btnNext").setAttribute("style", "visibility: hidden; display: none;")
@@ -413,7 +423,7 @@ function question(data) {
   sss = data
 
   select = document.createElement("select")
-  select.setAttribute("onChange", "changeSelect()")
+  select.setAttribute("onChange", "changeSelect(true)")
   select.setAttribute("id", "selecttest")
   select.setAttribute("class", "inpanswer")
 
@@ -440,6 +450,6 @@ function question(data) {
   document.getElementById("btnValid").setAttribute("style", "visibility: show;")
   document.getElementById("btnValid").focus()
 
-  changeSelect()
+  changeSelect(true)
 }
 
