@@ -59,8 +59,6 @@ function traduit() {
   input = document.getElementById("intranslate").value
   source_lang = document.getElementById("intrad").options[document.getElementById("intrad").selectedIndex].value
   target_lang = document.getElementById("outtrad").options[document.getElementById("outtrad").selectedIndex].value
-  console.log(source_lang + " : " + input)
-  console.log(target_lang + " : " + input)
   sendRequestTrad(input, source_lang, target_lang)
 }
 
@@ -133,7 +131,7 @@ function moyenne() {
         }
         else {
           moy += (parseFloat(d.value)*coefraph[i])
-        }console.log(i + " " + moy)
+        }
       }
     }
     i+=1
@@ -375,7 +373,6 @@ function changeSelect(isNew) {
     }
   }
 
-  console.log(data.cat[cat].words)
   word = Math.floor(Math.random() * data.cat[cat].words.length)
   lang = Math.floor(Math.random() * 2)
 
@@ -388,7 +385,6 @@ function changeSelect(isNew) {
   else {
     h2.textContent = data.cat[cat].words[word].al
   }
-  console.log("Coucou")
   x.append(h2)
 
   document.getElementById("btnNext").setAttribute("style", "visibility: hidden; display: none;")
