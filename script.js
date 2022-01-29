@@ -241,26 +241,105 @@ function clearSelectStyle(select) {
   }
 }
 
+function clearLitt() {
+  document.getElementById("txt").innerHTML = "";
+  document.getElementById("txt").setAttribute("style", "visibility: hidden;  display: none;")
+}
+
+function btnTypeLivreColor(b) {
+  document.getElementById("resume").setAttribute("style", "background-color: #333;")
+  document.getElementById("informations").setAttribute("style", "background-color: #333;")
+  document.getElementById("livre").setAttribute("style", "background-color: #333;")
+
+  if (b != "") {
+    document.getElementById(b).setAttribute("style", "background-color: #2D7024;")
+  }
+}
+
+function btnLivreColor(t, b) {
+  if (t == "cm") {
+    max = 3
+  }
+  else {
+    max = 2
+  }
+
+  for (let i = 0 ; i < max ; i++) {
+    document.getElementById(t + i).setAttribute("style", "background-color: #333;")
+  }
+  document.getElementById(t + b).setAttribute("style", "background-color: #2D7024;")
+} 
+
+function livre(chap) {
+  clearLitt()
+  btnTypeLivreColor("livre")
+  select = document.createElement("select")
+
+  if (type == "cm") {
+    length = livreCM.livre[book].livre.length
+  }
+
+  o = document.createElement("option")
+  o.textContent = "Introduction"
+  select.append(o)
+  for (let i = 0 ; i < length ; i++) {
+    o = document.createElement("option")
+    o.textContent = "Chapitre " + (i+1)
+    select.append(o)
+  }
+  
+  document.getElementById("txt").append(select)
+
+
+
+  document.getElementById("txt").setAttribute("style", "visibility: show;  text-align: left;")
+}
+
+function informations() {
+  clearLitt()
+  btnTypeLivreColor("informations")
+  if (type == "cm") {
+    tab = [[livreCM.livre[book].auteur, "Auteur"], [livreCM.livre[book].analyse, "Analyse"], [livreCM.livre[book].style,"Style d'écriture"], [livreCM.livre[book].personnage,"Evolution du personnage"], [livreCM.livre[book].lien,"Lien avec la réalité historique"]]
+
+    for (let i = 0 ; i < tab.length ; i++) {
+      if (tab[i][0] != "") {
+        h = document.createElement("h3")
+        h.textContent = tab[i][1]
+        h.setAttribute("style", "text-decoration: underline; margin-top: 5px;")
+        document.getElementById("txt").append(h)
+  
+        p = document.createElement("p")
+        p.textContent = tab[i][0]
+        document.getElementById("txt").append(p)
+      }
+    }
+
+    document.getElementById("txt").setAttribute("style", "visibility: show;  text-align: left;")
+  }
+}
+
 function resume() {
+  clearLitt()
+  btnTypeLivreColor("resume")
   if (type == "cm") {
     for (let i = 0 ; i < livreCM.livre[book].resume.length ; i++) {
       p = document.createElement("p")
       p.textContent = livreCM.livre[book].resume[i]
       document.getElementById("txt").append(p)
-      br = document.createElement("br")
-      br.setAttribute("style", "width: 30px;")
-      document.getElementById("txt").append()
     } 
     document.getElementById("txt").setAttribute("style", "visibility: show;  text-align: left;")
   }
 }
 
 function choiceBook(t, b) {
+  clearLitt()
+  btnLivreColor(t,b)
   if (t == "cm") {
     document.getElementById("typelivre").setAttribute("style", "visibility: show;")
     book = b
     type = t
   }
+  btnTypeLivreColor("")
 }
 
 function changeSelect() {
