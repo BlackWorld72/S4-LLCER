@@ -278,6 +278,7 @@ function livre(chap) {
   }
 
   if (document.getElementById("selecttest") == null) {
+    clearLitt()
     select = document.createElement("select")
     if (type == "cm") {
       length = livreCM.livre[book].livre.length
