@@ -125,9 +125,9 @@ function moyenne() {
         moy += (parseFloat(d.value)*coefyaya[i])
       }
       else {
-        if (i == 9) {
-          ang = moy
-          moy = (parseFloat(d.value)*coefraph[i])
+        console.log(i)
+        if (i < 9) {
+          ang += (parseFloat(d.value)*coefraph[i])
         }
         else {
           moy += (parseFloat(d.value)*coefraph[i])
@@ -157,10 +157,12 @@ function note(n) {
     isYaya = true
     document.getElementById("noteyaya").setAttribute("style","visibility: show; display: block;")
     document.getElementById("noteraph").setAttribute("style","display: none; visibility: hidden;")
+    document.getElementById("moyenne").textContent = "Moyenne : 0"
   } else {
     isYaya = false
     document.getElementById("noteraph").setAttribute("style","visibility: show; display: block;")
     document.getElementById("noteyaya").setAttribute("style","display: none; visibility: hidden;")
+    document.getElementById("moyenne").textContent = "Moyenne Anglais : 0 Moyenne Allemand : 0"
   }
 }
 
@@ -269,26 +271,62 @@ function btnLivreColor(t, b) {
 } 
 
 function livre(chap) {
-  clearLitt()
   btnTypeLivreColor("livre")
-  select = document.createElement("select")
 
-  if (type == "cm") {
-    length = livreCM.livre[book].livre.length
+  if (document.getElementById("dlivre") != null) {
+    document.getElementById("dlivre").innerHTML = ""
   }
 
-  o = document.createElement("option")
-  o.textContent = "Introduction"
-  select.append(o)
-  for (let i = 0 ; i < length ; i++) {
+  if (document.getElementById("selecttest") == null) {
+    select = document.createElement("select")
+    if (type == "cm") {
+      length = livreCM.livre[book].livre.length
+    }
+    
+    select.setAttribute("onchange","livre(this.value)")
+    select.setAttribute("id","selecttest")
     o = document.createElement("option")
-    o.textContent = "Chapitre " + (i+1)
+    o.textContent = "Introduction"
+    o.value = 0
     select.append(o)
+    for (let i = 0 ; i < length ; i++) {
+      o = document.createElement("option")
+      o.value = (i+1)
+      o.textContent = "Chapitre " + (i+1)
+      select.append(o)
+    }
+    
+    document.getElementById("txt").append(select)
   }
-  
-  document.getElementById("txt").append(select)
 
+  if (chap == 0) { // Introduction
+    s = ""
+    for (let i = 0 ; i < livreCM.livre[book].intro.length ; i++) {
+      s += livreCM.livre[book].intro[i]
+    }
+    p = document.getElementById("dlivre")
+    if (p == null) {
+      p = document.createElement("div")
+      p.setAttribute("id","dlivre")
+    }
 
+    k = document.createElement("p")
+    k.textContent = s
+
+    p.append(k)
+    document.getElementById("txt").append(p)
+  }
+  else {
+    p = document.getElementById("dlivre")
+    br = document.createElement("br")
+    for (let i = 0 ; i < livreCM.livre[book].livre[chap-1].length ; i++) {
+      k = document.createElement("p")
+      k.textContent = livreCM.livre[book].livre[chap-1][i]
+      p.append(k)
+      p.append(br)
+    }
+
+  }
 
   document.getElementById("txt").setAttribute("style", "visibility: show;  text-align: left;")
 }
@@ -419,7 +457,7 @@ function question(data) {
   sss = data
 
   select = document.createElement("select")
-  select.setAttribute("onChange", "changeSelect(true)")
+  select.setAttribute("²ange", "changeSelect(true)")
   select.setAttribute("id", "selecttest")
   select.setAttribute("class", "inpanswer")
 
