@@ -4,8 +4,7 @@
   <meta charset="utf-8">
   <title>S4 - LLCER</title>
   <link rel="stylesheet" href="style.css">
-  <script type="text/javascript" src="grammaire.js"></script>
-  <script type="text/javascript" src="livreCM.js"></script>
+  <script type="text/javascript" src="maitrise.js"></script>
   <script type="text/javascript" src="words.js"></script>
   <script type="text/javascript" src="script.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,24 +23,18 @@
 
     <br>
     <div class="diff">
-      <input type="button" class="btnLivre" id="cm0" value= "Thomas Mann - Mario und der Zauberer" onclick="choiceBook('cm', 0)">
-      <input type="button" class="btnLivre" id="cm1" value= "Crista Wolf - Der geteilte Himmel" onclick="choiceBook('cm', 1)">
-      <input type="button" class="btnLivre" id="cm2" value= "Heinrich Böll - Die verlorene Ehre der Katharina Blum" onclick="choiceBook('cm', 2)">
+      <input type="button" class="btnDiff" value= "Liste mots" onclick="listWords(maitrise)">
+      <input type="button" class="btnDiff" value= "Vocabulaires" onclick="question(maitrise)">
     </div>
 
-    <div class="type" id="typelivre" style="visibility: hidden;">
-      <input type="button" class="btnDiff" id="resume" value= "Résumé" onclick="resume()">
-      <input type="button" class="btnDiff" id="informations" value= "Informations" onclick="informations()">
-      <input type="button" class="btnDiff" id="livre" value= "Livre" onclick="livre(0)">
-    </div>
-
-    <div class="questions" style="visibility: hidden;" id="txt"></div>
+    <div class="questions" id="qs"></div>
 
     <div id="validation">
       <input type="button" style="visibility: hidden; display: none;" value= "Valider" id="btnValid" onclick="validate()"></input>
       <input type="button" style="visibility: hidden; display: none;" value= "Suivant" id="btnNext" onclick="changeSelect()"></input>
       <div id="score"></div>
     </div>
+
     
 
 

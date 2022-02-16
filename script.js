@@ -458,7 +458,7 @@ function question(data) {
   sss = data
 
   select = document.createElement("select")
-  select.setAttribute("²ange", "changeSelect(true)")
+  select.setAttribute("onchange", "changeSelect(true)")
   select.setAttribute("id", "selecttest")
   select.setAttribute("class", "inpanswer")
 
